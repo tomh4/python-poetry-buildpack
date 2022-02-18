@@ -34,10 +34,13 @@ fi
 
 log "Generate requirements.txt with Poetry"
 
+log "Install Poetry dependencies"
+
+apt update && apt install -y python3-venv
+
 log "Install Poetry"
 
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py \
-    | sed -e 's/allowed_executables = \["python", "python3"\]/allowed_executables = ["python3"]/' \
+curl -sSL https://install.python-poetry.org \
     | python3 \
     | indent
 
