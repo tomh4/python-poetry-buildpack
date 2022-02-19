@@ -10,7 +10,6 @@ function indent() {
     sed -e 's/^/       /'
 }
 
-export BUILD_DIR="$1"
 export ENV_DIR="$3"
 
 log "LS: "
@@ -55,8 +54,6 @@ fi
 REQUIREMENTS_FILE="requirements.txt"
 
 log "Export $REQUIREMENTS_FILE from Poetry"
-
-cd "$BUILD_DIR"
 
 EXPORT_PARAMETERS=(--without-hashes --with-credentials)
 
