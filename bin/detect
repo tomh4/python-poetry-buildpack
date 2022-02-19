@@ -2,9 +2,7 @@
 
 set -euo pipefail
 
-BUILD_DIR="$1"
-
-if [ ! -f "$BUILD_DIR/poetry.lock" ] ; then
+if [ ! -f poetry.lock ] ; then
     exit 1
 fi
 
