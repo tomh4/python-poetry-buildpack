@@ -1,0 +1,6 @@
+# Buildpack API version
+api = "0.7"
+
+# Buildpack ID and metadata
+[buildpack]
+  id = "tomh4/python-poetry"
