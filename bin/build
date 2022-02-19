@@ -12,8 +12,11 @@ function indent() {
 
 export ENV_DIR="$3"
 
-log "Environment: "
-printenv
+if [[ -f .build-env ]]; then
+    log "Loading envs from file:"
+    export $(grep -v '^#' .env | xargs)
+    printenv
+fi
 
 BUILDPACK_VARIABLES="DISABLE_POETRY_CREATE_RUNTIME_FILE PYTHON_RUNTIME_VERSION"
 
