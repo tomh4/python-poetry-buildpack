@@ -33,7 +33,7 @@ jobs:
         echo "::set-output name=address::${PACKAGE}@${DIGEST}"        
       shell: bash
       env:
-        REPO: ghcr.io/${{ github.actor }}/${{ github.repository }}
+        REPO: ghcr.io/${{ github.repository }}
     - id: register
       uses: docker://ghcr.io/buildpacks/actions/registry/request-add-entry:4.4.0
       with:
