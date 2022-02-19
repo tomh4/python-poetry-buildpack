@@ -14,7 +14,7 @@ export ENV_DIR="$3"
 
 if [[ -f .build-env ]]; then
     log "Loading envs from file:"
-    export $(grep -v '^#' .env | xargs)
+    export $(grep -v '^#' .build-env | xargs)
     printenv
 fi
 
