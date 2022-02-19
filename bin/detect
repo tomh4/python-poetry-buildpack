@@ -3,6 +3,8 @@
 set -euo pipefail
 
 if [ ! -f poetry.lock ] ; then
+    echo $(ls)
+    echo "$1"
     exit 1
 fi
 
