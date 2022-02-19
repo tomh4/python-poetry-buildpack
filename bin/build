@@ -12,9 +12,8 @@ function indent() {
 
 export ENV_DIR="$3"
 
-log "LS: "
-echo $(ls)
-
+log "Environment: "
+printenv
 
 BUILDPACK_VARIABLES="DISABLE_POETRY_CREATE_RUNTIME_FILE PYTHON_RUNTIME_VERSION"
 
