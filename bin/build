@@ -13,7 +13,9 @@ function indent() {
 export BUILD_DIR="$1"
 export ENV_DIR="$3"
 
-log "Starting from Build Dir: $1"
+log "LS: "
+echo $(ls)
+
 
 BUILDPACK_VARIABLES="DISABLE_POETRY_CREATE_RUNTIME_FILE PYTHON_RUNTIME_VERSION"
 
