@@ -4,7 +4,7 @@ api = "0.7"
 # Buildpack ID and metadata
 [buildpack]
   id = "tomh4/python-poetry"
-  version = "0.1.4"
+  version = "0.1.5"
   
 # Stacks that the buildpack will work with
 [[stacks]]
