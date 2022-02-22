@@ -7,5 +7,6 @@ if [ ! -f poetry.lock ] ; then
     echo "$1"
     exit 1
 fi
-
+echo "Creating dummy requirements file to pass detection of other Buildpacks"
+touch requirements.txt
 echo "Python Poetry"
