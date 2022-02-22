@@ -103,3 +103,6 @@ else
     log "$PYTHON_RUNTIME_VERSION is not valid, please specify an exact Python version (e.g. 3.8.1) in your pyproject.toml (and thus poetry.lock)" >&2
     exit 1
 fi
+
+log "Poetry Buildpack completed"
+echo $(ls)
