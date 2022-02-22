@@ -54,6 +54,8 @@ if [ -f "$PATH_TO_POETRY_ENV" ] ; then
 fi
 
 REQUIREMENTS_FILE="requirements.txt"
+log "Deleting existing requirements.txt"
+rm $REQUIREMENTS_FILE
 
 log "Export $REQUIREMENTS_FILE from Poetry"
 
