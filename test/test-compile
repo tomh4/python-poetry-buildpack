@@ -9,6 +9,16 @@ run_test sanity-2 compile BUILD_DIR CACHE_DIR
 cp fixtures/poetry.lock-valid "$INPUT_DIR"/poetry.lock
 run_test no_vars_success compile "$INPUT_DIR" CACHE_DIR fixtures/env_dir
 
+cp fixtures/poetry.lock-valid_version_comment "$INPUT_DIR"/poetry.lock
+run_test poetry_version_comment compile "$INPUT_DIR" CACHE_DIR fixtures/env_dir
+
+cp fixtures/poetry.lock-valid_exact_version_specifier "$INPUT_DIR"/poetry.lock
+run_test exact_version_specifier compile "$INPUT_DIR" CACHE_DIR fixtures/env_dir
+
+# add trailing space to python-versions to test if it will be removed
+sed -e 's/^python-versions.*/& /g' fixtures/poetry.lock-valid > "$INPUT_DIR"/poetry.lock
+run_test trailing_space compile "$INPUT_DIR" CACHE_DIR fixtures/env_dir
+
 cp fixtures/poetry.lock-valid "$INPUT_DIR"/poetry.lock
 run_test export_dev compile "$INPUT_DIR" CACHE_DIR fixtures/env_dir-export_dev
 
@@ -24,3 +34,11 @@ run_test force_poetry_version compile "$INPUT_DIR" CACHE_DIR fixtures/env_dir-po
 
 echo "test" > "$INPUT_DIR/runtime.txt"
 run_test skip_runtime_error compile "$INPUT_DIR" CACHE_DIR fixtures/env_dir-disable_runtime-0
+
+# overriding export param with POETRY_EXPORT_PARAMS env var
+cp fixtures/poetry.lock-valid "$INPUT_DIR"/poetry.lock
+run_test export_params-0 compile "$INPUT_DIR" CACHE_DIR fixtures/env_dir-export_params-0
+
+# overriding export param with POETRY_EXPORT_PARAMS env var and skipping POETRY_EXPORT_DEV_REQUIREMENTS env var
+cp fixtures/poetry.lock-valid "$INPUT_DIR"/poetry.lock
+run_test export_params-1 compile "$INPUT_DIR" CACHE_DIR fixtures/env_dir-export_params-1
