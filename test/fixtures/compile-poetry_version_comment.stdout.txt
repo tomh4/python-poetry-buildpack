@@ -1,4 +1,4 @@
------> No Poetry version specified in POETRY_VERSION config var. Defaulting to latest.
+-----> Read Poetry version 1.5.1 from poetry.lock
 -----> Generate requirements.txt with Poetry
 -----> Install Poetry
        >>> mocked curl call <<<
@@ -6,7 +6,6 @@
 -----> Install poetry-plugin-export
        >>> mocked poetry call <<<
 -----> Export requirements.txt from Poetry
------> Enable exporting dev requirements to requirements.txt
        >>> mocked poetry call <<<
 -----> Export Python version from Poetry to Heroku runtime.txt file
 -----> Read Python version from poetry.lock
