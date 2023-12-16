@@ -4,10 +4,10 @@ api = "0.7"
 # Buildpack ID and metadata
 [buildpack]
   id = "tomh4/python-poetry"
-  version = "2.0.0"
+  version = "2.0.0-20"
   
 # Stacks that the buildpack will work with
 [[stacks]]
-  id = "heroku-22"
+  id = "heroku-20"
 
 
